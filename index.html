@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LINGORA AI - Voice Translator</title>
+<title>LINGORA AI | Smart Language Translator</title>
 
 <style>
 * {
@@ -16,6 +16,7 @@
 body {
   background: #090910;
   color: white;
+  min-height: 100vh;
 }
 
 header {
@@ -23,148 +24,159 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 22px 8%;
-  border-bottom: 1px solid #242436;
+  border-bottom: 1px solid #292039;
 }
 
 .logo {
-  font-size: 27px;
+  font-size: 26px;
   font-weight: bold;
   color: #c084fc;
 }
 
+.logo span {
+  color: white;
+}
+
 nav a {
-  color: #ddd;
+  color: #ccc;
   text-decoration: none;
-  margin-left: 22px;
+  margin-left: 25px;
 }
 
 .hero {
   text-align: center;
-  padding: 100px 20px 60px;
+  padding: 85px 20px 45px;
 }
 
 .badge {
   display: inline-block;
   padding: 9px 18px;
-  border: 1px solid #8b5cf6;
+  border: 1px solid #7436a8;
   border-radius: 30px;
-  color: #c084fc;
+  color: #d8a4ff;
   margin-bottom: 25px;
 }
 
-.hero h1 {
-  font-size: clamp(38px, 7vw, 68px);
+h1 {
+  font-size: clamp(36px, 7vw, 65px);
   line-height: 1.15;
-  margin-bottom: 22px;
 }
 
-.hero h1 span {
-  color: #b66cff;
+h1 span {
+  color: #bd68ff;
 }
 
 .hero p {
   color: #aaa;
-  font-size: 18px;
-  max-width: 650px;
-  margin: auto;
-  line-height: 1.7;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 15px 32px;
-  border-radius: 10px;
-  background: linear-gradient(90deg,#7c3aed,#c026d3);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+  margin-top: 20px;
+  font-size: 17px;
 }
 
 .translator {
   max-width: 850px;
-  margin: 35px auto 80px;
+  margin: 20px auto 70px;
   padding: 30px;
-  background: #151522;
-  border: 1px solid #39304e;
-  border-radius: 20px;
-}
-
-.translator h2 {
-  text-align: center;
-  margin-bottom: 25px;
+  background: #15121f;
+  border: 1px solid #44305e;
+  border-radius: 22px;
+  box-shadow: 0 0 40px #8b2be522;
 }
 
 .languages {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 15px;
-  margin-bottom: 25px;
-  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 select {
-  padding: 12px;
-  background: #252538;
+  background: #211b30;
   color: white;
-  border: 1px solid #555;
-  border-radius: 8px;
+  border: 1px solid #604080;
+  padding: 13px;
+  border-radius: 10px;
+  width: 45%;
 }
 
 textarea {
   width: 100%;
-  height: 130px;
-  padding: 18px;
-  background: #0d0d18;
+  height: 150px;
+  background: #0d0b14;
   color: white;
-  border: 1px solid #39304e;
-  border-radius: 10px;
-  resize: vertical;
+  border: 1px solid #453254;
+  border-radius: 14px;
+  padding: 18px;
   font-size: 16px;
+  resize: vertical;
+  outline: none;
 }
 
-.translate-btn {
-  width: 100%;
-  margin-top: 18px;
-  padding: 15px;
+textarea:focus {
+  border-color: #bd68ff;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+button {
   border: none;
-  border-radius: 9px;
-  background: #9333ea;
-  color: white;
-  font-size: 17px;
+  border-radius: 10px;
+  padding: 14px 22px;
+  cursor: pointer;
+  font-size: 15px;
   font-weight: bold;
 }
 
-.output {
-  margin-top: 20px;
-  padding: 18px;
-  background: #0d0d18;
-  border-radius: 10px;
-  min-height: 60px;
-  color: #d8b4fe;
+.translate {
+  background: linear-gradient(90deg,#8738d5,#c34cff);
+  color: white;
+  flex: 1;
+}
+
+.secondary {
+  background: #292039;
+  color: white;
+  border: 1px solid #594070;
+}
+
+.result {
+  margin-top: 25px;
+}
+
+.result h3 {
+  color: #c084fc;
+  margin-bottom: 12px;
+}
+
+#output {
+  min-height: 110px;
 }
 
 .features {
-  padding: 60px 8%;
+  padding: 35px 8% 80px;
   text-align: center;
 }
 
 .features h2 {
-  font-size: 35px;
+  font-size: 32px;
   margin-bottom: 35px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
   gap: 20px;
 }
 
 .card {
+  background: #15121f;
+  border: 1px solid #382747;
+  border-radius: 16px;
   padding: 30px 20px;
-  background: #151522;
-  border: 1px solid #39304e;
-  border-radius: 15px;
 }
 
 .card h3 {
@@ -181,23 +193,33 @@ footer {
   text-align: center;
   padding: 30px;
   color: #888;
-  border-top: 1px solid #242436;
+  border-top: 1px solid #292039;
 }
 
 @media(max-width:600px) {
   header {
-    padding: 18px 5%;
+    padding: 18px;
   }
-  nav a {
-    margin-left: 8px;
-    font-size: 13px;
+
+  nav {
+    display: none;
   }
+
   .hero {
-    padding-top: 70px;
+    padding-top: 60px;
   }
+
   .translator {
-    margin: 25px 12px 50px;
+    margin: 15px;
     padding: 20px;
+  }
+
+  .languages {
+    gap: 8px;
+  }
+
+  select {
+    font-size: 12px;
   }
 }
 </style>
@@ -206,118 +228,166 @@ footer {
 <body>
 
 <header>
-  <div class="logo">LINGORA AI</div>
+  <div class="logo">LINGORA<span> AI</span></div>
   <nav>
     <a href="#home">Home</a>
-    <a href="#translate">Translate</a>
+    <a href="#translator">Translator</a>
     <a href="#features">Features</a>
   </nav>
 </header>
 
 <section class="hero" id="home">
-  <div class="badge">✦ NEXT GENERATION AI PLATFORM</div>
+
+  <div class="badge">✦ Your Smart Language Partner</div>
 
   <h1>Break Language<br>
-  <span>Barriers With AI</span></h1>
+  <span>Barriers With AI.</span></h1>
 
-  <p>
-    Experience a smarter way to communicate.
-    Translate languages and connect with the world
-    using LINGORA AI.
-  </p>
+  <p>Translate, communicate and explore languages<br>
+  with LINGORA AI.</p>
 
-  <a href="#translate" class="btn">Start Translating →</a>
 </section>
 
-<section class="translator" id="translate">
-  <h2>✦ AI Language Translator</h2>
+<section class="translator" id="translator">
 
   <div class="languages">
+
     <select id="from">
       <option value="en">English</option>
       <option value="or">Odia</option>
-      <option value="hi">Hindi</option>
     </select>
-
-    <span>⇄</span>
 
     <select id="to">
       <option value="or">Odia</option>
       <option value="en">English</option>
-      <option value="hi">Hindi</option>
     </select>
+
   </div>
 
-  <textarea id="input" placeholder="Enter your text here..."></textarea>
+  <textarea id="input"
+    placeholder="Enter your text here..."></textarea>
 
-  <button class="translate-btn" onclick="translateText()">
-    Translate Now ✨
-  </button>
+  <div class="buttons">
 
-  <div class="output" id="output">
-    Your translation will appear here...
+    <button class="secondary" onclick="voiceInput()">
+      🎤 Voice
+    </button>
+
+    <button class="translate" onclick="translateText()">
+      ✨ Translate
+    </button>
+
+    <button class="secondary" onclick="clearText()">
+      Clear
+    </button>
+
   </div>
+
+  <div class="result">
+
+    <h3>Translation Result</h3>
+
+    <textarea id="output"
+      placeholder="Your translation will appear here..."
+      readonly></textarea>
+
+    <div class="buttons">
+      <button class="secondary" onclick="copyText()">
+        📋 Copy Result
+      </button>
+    </div>
+
+  </div>
+
 </section>
 
 <section class="features" id="features">
+
   <h2>Powerful Features</h2>
 
   <div class="cards">
+
     <div class="card">
-      <h3>🎤 Voice Translation</h3>
-      <p>Explore voice-based language communication.</p>
+      <h3>🌐 Smart Translation</h3>
+      <p>Explore English and Odia language translation.</p>
     </div>
 
     <div class="card">
-      <h3>🌍 Multiple Languages</h3>
-      <p>Connect with people across different languages.</p>
+      <h3>🎤 Voice Input</h3>
+      <p>Enter text using your voice.</p>
     </div>
 
     <div class="card">
-      <h3>⚡ Easy Interface</h3>
-      <p>Enjoy a clean, simple and modern experience.</p>
+      <h3>⚡ Simple Interface</h3>
+      <p>Enjoy a clean and easy translation experience.</p>
     </div>
+
   </div>
+
 </section>
 
 <footer>
   © 2026 LINGORA AI. All Rights Reserved.
+  <br><br>
+  Designed with ❤️
 </footer>
 
 <script>
-async function translateText() {
-  const text = document.getElementById("input").value;
-  const from = document.getElementById("from").value;
-  const to = document.getElementById("to").value;
+
+function translateText() {
+  const input = document.getElementById("input").value.trim();
+
+  if (!input) {
+    alert("Please enter some text first!");
+    return;
+  }
+
+  document.getElementById("output").value =
+    "Translation engine will be connected in the next development stage.";
+}
+
+function clearText() {
+  document.getElementById("input").value = "";
+  document.getElementById("output").value = "";
+}
+
+function copyText() {
   const output = document.getElementById("output");
 
-  if (!text.trim()) {
-    output.innerText = "Please enter some text first.";
+  if (!output.value) {
+    alert("No result to copy!");
     return;
   }
 
-  if (from === to) {
-    output.innerText = text;
-    return;
-  }
-
-  output.innerText = "Translating...";
-
-  try {
-    const url = "https://api.mymemory.translated.net/get?q="
-      + encodeURIComponent(text)
-      + "&langpair=" + from + "|" + to;
-
-    const response = await fetch(url);
-    const data = await response.json();
-
-    output.innerText =
-      data.responseData.translatedText || "Translation unavailable.";
-
-  } catch (error) {
-    output.innerText = "Translation failed. Please try again.";
-  }
+  navigator.clipboard.writeText(output.value)
+    .then(() => alert("Copied successfully!"))
+    .catch(() => alert("Please copy the text manually."));
 }
+
+function voiceInput() {
+  if (!("webkitSpeechRecognition" in window ||
+        "SpeechRecognition" in window)) {
+    alert("Voice input is not supported in this browser.");
+    return;
+  }
+
+  const SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  const recognition = new SpeechRecognition();
+
+  recognition.lang =
+    document.getElementById("from").value === "or"
+    ? "or-IN" : "en-IN";
+
+  recognition.onresult = function(event) {
+    document.getElementById("input").value =
+      event.results[0][0].transcript;
+  };
+
+  recognition.start();
+}
+
 </script>
 
 </body>
